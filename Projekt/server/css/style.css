@@ -1,0 +1,291 @@
+/*..............................za onlines..............................................*/
+
+.btn {
+    background: lightblue;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.section {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.rotate180 {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.rotate90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.rotate270 {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+.invPlayersStyle {
+    text-align: center;
+    font-size: medium;
+    color: #029f5b;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.navbar-fixed-top {
+    position: absolute !important;
+}
+
+#glavni_div {
+    float: left;
+    width: 60%;
+    border: solid;
+    margin: 2%;
+}
+
+#onlines {
+    float: left;
+    margin-right: 5%;
+    width: 30%;
+    border: solid;
+    margin: 2%;
+}
+
+#onlines h2 {
+    margin-left: 5%;
+}
+
+#naslov_onlines {
+    text-align: center;
+}
+
+#opcije button {
+    float: left;
+    margin: 2%;
+}
+
+#karte {
+    float: left;
+    width: 40%;
+    margin: 2%;
+}
+
+#odabrani, #play, #reset {
+    float: left;
+    width: 40%;
+    margin: 2%;
+}
+
+#f_p_r {
+    width: 70%;
+}
+
+.login-title {
+    text-align: center;
+}
+
+.centerButton {
+    padding: 50px;
+}
+
+.gameRulesColor {
+    background-color: #59B2E6;
+}
+
+.padding {
+    padding-bottom: 50px;
+    padding-top: 50px;
+    margin-bottom: 50px;
+}
+
+.login-title {
+    text-align: center;
+}
+
+.playButtonSize {
+    height: 50px;
+    width: 450px;
+    margin-right: 50px;
+}
+
+.carousel-style {
+    height: 400px;
+    width: 1200px;
+    margin: auto;
+}
+
+.carousel-parent-style {
+    text-align: center;
+}
+
+.gameRoomHidden {
+    display: none;
+    visibility: hidden;
+}
+
+.gameRoomShown {
+    display: block;
+    visibility: visible;
+}
+
+.playerInviteHidden {
+    display: none;
+    visibility: hidden;
+}
+
+.playerInviteShown {
+    display: block;
+    visibility: visible;
+}
+
+.gameRoomHidden {
+    display: none;
+    visibility: hidden;
+}
+
+.gameRoomShown {
+    display: block;
+    visibility: visible;
+}
+
+.playerInviteHidden {
+    display: none;
+    visibility: hidden;
+}
+
+.playerInviteShown {
+    display: block;
+    visibility: visible;
+}
+
+#loading {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../view/gifs/spinner.gif') no-repeat center center;
+}
+
+.modal-backdrop {
+    opacity: 0.9 !important;
+}
+
+/*---------------------------- KOPIRANO SA http://bootsnipp.com/snippets/featured/login-and-register-tabbed-form  -----------------------------*/
+body {
+    padding-top: 90px;
+}
+
+.panel-login {
+    border-color: #ccc;
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.panel-login > .panel-heading {
+    color: #00415d;
+    background-color: #fff;
+    border-color: #fff;
+    text-align: center;
+}
+
+.panel-login > .panel-heading a {
+    text-decoration: none;
+    color: #666;
+    font-weight: bold;
+    font-size: 15px;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+
+.panel-login > .panel-heading a.active {
+    color: #029f5b;
+    font-size: 18px;
+}
+
+.panel-login > .panel-heading hr {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    clear: both;
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+    background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+    background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+    background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+}
+
+.panel-login input[type="text"], .panel-login input[type="email"], .panel-login input[type="password"] {
+    height: 45px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+
+.panel-login input:hover,
+.panel-login input:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-color: #ccc;
+}
+
+.btn-login {
+    background-color: #59B2E0;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+    height: auto;
+    font-weight: normal;
+    padding: 14px 0;
+    text-transform: uppercase;
+    border-color: #59B2E6;
+}
+
+.btn-login:hover,
+.btn-login:focus {
+    color: #fff;
+    background-color: #53A3CD;
+    border-color: #53A3CD;
+}
+
+.btn-register {
+    background-color: #1CB94E;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+    height: auto;
+    font-weight: normal;
+    padding: 14px 0;
+    text-transform: uppercase;
+    border-color: #1CB94A;
+}
+
+.btn-register:hover,
+.btn-register:focus {
+    color: #fff;
+    background-color: #1CA347;
+    border-color: #1CA347;
+}
+
+/*---------------------------- KOPIRANO SA http://bootsnipp.com/snippets/featured/login-and-register-tabbed-form  -----------------------------*/
+.karta {
+    width: 140px;
+    height: 275px;
+    float: left;
+}

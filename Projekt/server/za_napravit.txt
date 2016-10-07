@@ -1,0 +1,94 @@
+Ovdje ce biti popis stvari koje bi trebalo napraviti.
+Slobodno svi pisite ideje/zahtjeve.
+Kad napravite stavite x-ic ili smajlic :), i poslije kad netko drugi
+provjeri da li radi kako spada neka taj drugi obrise zadatak s popisa.
+
+
+
+Back:
+verzija 1.1
+    - Napraviti funkciju odustajem u igra controller kako spada,
+        postavi u bazi u danu igru gotova_igra = 1 i bodovi "120, 0" ili "0, 120"
+        ovisno o tome tko nije odigrao.
+
+    - Napraviti kad igrac klikne na odjava da se odgovarajuce stvari
+        dogode ovisno o tome je li igrac u lobiju/sobi/igri.
+        -> funkcija izbaci_iz_onlines()/UserService i logout/PrijavaController.
+
+    - Napraviti skriptu koja ce svaku minutu pogledati da li je korisnik napravio
+        potez u bazi igre, inace stavi drugi tim da je pobjedio. Postavi u bazi u danu
+        igru gotova_igra = 1 i bodovi "120, 0" ili "0, 120" ovisno o tome tko nije odigrao.
+        -> Dodati u bazu igra TIMESTAMP koji ce sluziti za provjeru koliko nije igrac
+           dugo odigrao potez, postaviti TIMESTAMP da se update-a na promjenu u bazi.
+
+    - Napraviti skriptu koja odlogira igraca (izbacuje ga iz onlines) ako nije bio
+        aktivan 5 min, u onlines tablicu dodati polje TIMESTAMP koje se update-a
+        po promjeni redka.
+
+    - (OPCIONALNO) napisati funkciju promjeni_potvrdu() koja za trenutnog igraca u
+        bazi mijenja stanje potvrde iz 0 u 1 ili obrnuto ovisno o trenutnom stanju
+        korisnika.
+
+    - Napisati funkciju promjeni_redoslijed(int) koja (ovisno o dogovoru provjerava
+        da li je prvi igrac zatrazio promjenu) i mijenja redoslijed igraca, stavlja
+        igraca s mjesta dobivenog kao parametar, na jedno mjesto prije.
+
+verzija 1.2
+    - napraviti "kljuc" koji se stvori prilikom logiranje u igru i spremi
+        u seesion te pomocu kojeg se provjerava je li korisnik "pravi". Prilikom
+        login-a on bi se spremio u tablicu userList (u njoj bi trebalo napraviti novo
+        polje Kljuc), a prlikom logouta on bi se mijenjao.
+
+    - napraviti funkciju izbaci_igraca_iz_sobe()/OnlineController koja ce izbaciti
+        igraca dobivenog kao parametar (po imenu) iz sobe te ta funkcija nekako
+        mora izbrisati iz sessiona igraca kojeg smo izbacili id_sobe????
+        ako netko ima ideju ne se javi. Vjerojatno u cekaj_pocetak_igre() vratiti
+        nesto pa da onda igrac zna da vise nije u sobi.
+
+Front:
+- verzija 1.1
+    - Dodati gumb za odustajanje tokom igre
+        -> poziva funkciju odustajem() iz igra controller.
+
+    - Dodati gumb spreman/nespreman (ili 2 ako zelis za spreman i za nisam spreman) za igru.
+        -> poziva funkcije spreman_za_igru() ili nisam_spreman_za_igru() ovisno o tome
+           sto korisnik zeli, funkcije vec implementirane.
+        -> OPCIONALNO ili poziva uvijek istu funkciju promjeni_potvrdu() pa ovisno
+           je li trenutno spreman postavi da nije i obrnuto ekvivalentno, to je onda manje logike na
+           klijentu, ali trenutno ta funkcija ne postoji, pa ako to makni OPCIONALNO iz back).
+        -> kad se to implementira treba kod svakog igraca nacrtati je li trenutno
+           spreman (dobiva se preko parametra potvrda, niz 0/1 nijeSpreman/spreman
+           istim redosljedom kao i imena igraca).
+        -> tek nakon sto su sve potvrde na 1 treba omoguciti pojavljivanje buttona
+           "Pokreni igru!".
+        -> nakon sto implementiras dodaj u zadatak za back promjeni pocetno stanje u
+           bazi kod kreiranje sobe potvrede na 0, te nakon stvaranja igre postavljanje
+           potvrda na 0.
+
+    - Dodati neku strijelicu/kvacicu ili tako nesto da se redosljed igraca moze mijenjati, tj
+        kad bi kliknuo na tu strijelicu igrac do kojeg bi bila bi pomaknuo mjeto u bazi
+        te bi se tako mogao mijenjati tko s kime igra. Ugl strijelica bi se trebala
+        pojavljivati samo u sobi za 4 osobe i to do igraca 2,3,4 prvi je fiksan.
+        Treba samo odluciti da li svi mogu klikati ili samo igrac na 1. mjestu,
+        za to cekamo odgovor ostalih. (Ivan -> za to da samo prvi smije mijenjati), i ONDA
+        bi samo 1. igracu na popisu crtao te strijelice.
+        -> pozivas funkciju promjeni_redoslijed(int broj igraca kojeg "guramo" gore).
+
+- verzija 1.2
+    - Omoguciti svim ili samo 1. igracu iz sobe izbacivanje drugi iz sobe
+        (Ivan -> samo prvi smije izbacivati).
+        nacrtati do igraca neku tipku za izbacivanje koja ce pozivati funkciju
+        izbaci_igraca_iz_sobe()/OnlineController
+
+    - Pokazati sve aktivne sobe, poziva funkciju sve_sobe()/OnlineController
+        koja ce vratiti sve sobe (id, imena_igraca).
+
+    - Omoguciti zelju za ulaskom u sobu (kliknuti na jednu od aktivnih soba).
+        udi_u_sobu(POST[id_sobe], POST[broj_igraca])/OnlineController.
+        Omoguciti klikanje samo na sobe koje nisu pune (broj_imena < broj_igraca).
+
+Za testirati:
+- Sto se tocno dogodi nakon zavrsetka igre, nakon sto jedan igrac klikne vrati se
+    u sobu, pa kad iduci igrac klikne na taj gumb -> sto funkcija obrada kraja,
+    tj. kako se se poziv na bazu procitaj_i_obrisi napravi, da li izbaci gresku,
+    ili samo praza red.
