@@ -1,0 +1,25 @@
+table{
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+input{
+	width: 70px;
+}
+
+.polje{
+	width: 50px;
+	height: 50px;
+	padding: 5px;
+	margin-bottom: 2px;
+	text-align: center;
+	border: solid 2px;
+}
+
+.polje.pokriven{
+	background-color: #AAAAAA;
+}
+
+.polje.otkriven {
+	background-color: #DDDDDD;
+}

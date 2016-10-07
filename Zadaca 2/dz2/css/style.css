@@ -1,0 +1,41 @@
+table { border-spacing: 0; border-collapse: collapse; }
+td { border: solid 1px; padding: 5px; } 
+th { border: none; }
+
+span{
+	background: magenta;
+}
+
+.recenzija {
+	padding: 5px;
+	border-style: solid;
+	border-width: 0px 0px 4px 0px;
+	margin-bottom: 2px;
+}
+
+.predmet {
+	padding: 5px;
+	border-style: solid;
+	border-width: 0px 0px 4px 0px;
+	margin-bottom: 2px;
+}
+
+.mainContainer {
+	width: 60%;
+	height:200px;
+	margin: 0 auto;
+	background-color:#FFA500 ;
+}
+
+.heading {
+	padding: 10px;
+}
+
+.container {
+	background-color: #E8E8E8;
+	padding: 10px;
+}
+
+.recenzijeButton:hover {
+	text-decoration: underline;
+}
